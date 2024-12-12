@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Page</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User Information</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>User Password</th>
+
+
+                <!-- Add more headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Userlogin : ${userData}">
+                <td th:text="${Userlogin.username}"></td>
+                <td th:text="${Userlogin.usermail}"></td>
+                <td th:text="${Userlogin.userpassword}"></td>
+
+
+                <!-- Add more cells as needed -->
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Donar Information</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Donar Email</th>
+                <th>Donar Phone no.</th>
+                <th>Donar Blood Group</th>
+
+                <!-- Add more headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="DonarForm : ${donarData}">
+                <td th:text="${DonarForm.donarEmail}"></td>
+                <td th:text="${DonarForm.phoneNo}"></td>
+                <td th:text="${DonarForm.boodType}"></td>
+
+
+
+                <!-- Add more cells as needed -->
+            </tr>
+        </tbody>
+    </table>
+
+   
+
+</body>
+</html>
